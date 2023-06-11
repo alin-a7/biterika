@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Campaign } from "../types";
 
-export type TabType = "all" | "1" | "2" | "3" | "4" | "5";
+export type TabType = "" | "in_progress" | "2" | "paused" | "moderation" | "5";
 interface InitialSatate {
   activeTab: TabType;
 }
 
 const initialSatate: InitialSatate = {
-  activeTab: "all",
+  activeTab: "",
 };
 
 export const appSlice = createSlice({

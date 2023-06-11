@@ -9,11 +9,11 @@ interface Tab {
 }
 
 const Tabs: Tab[] = [
-  { label: "Все", dataTab: "all" },
-  { label: "В работе", dataTab: "1" },
+  { label: "Все", dataTab: "" },
+  { label: "В работе", dataTab: "in_progress" },
   { label: "Ожидают начала", dataTab: "2" },
-  { label: "Приостановлены", dataTab: "3" },
-  { label: "На модерации", dataTab: "4" },
+  { label: "Приостановлены", dataTab: "paused" },
+  { label: "На модерации", dataTab: "moderation" },
   { label: "Завершенные", dataTab: "5" },
 ];
 

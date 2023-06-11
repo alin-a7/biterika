@@ -1,13 +1,12 @@
 import React from "react";
 
 import Head from "./components/Head";
-import { useGetAllCampaignQuery } from "@/store/api/appApi";
-import RowItem from "./components/RowItem";
+import { useTable } from "./hooks";
 
 const Table = () => {
-  const { data, isLoading } = useGetAllCampaignQuery();
+  const { isLoading, tableContent } = useTable();
 
-  if (isLoading) return <h2>Loading...</h2>;
+  if (isLoading) return <h2 className="card__wrap xxl-center">Loading...</h2>;
 
   return (
     <div className="table">
@@ -15,11 +14,7 @@ const Table = () => {
         <div className="table__head table__head--col-8 is-tablet mb-15 mb-lg-2">
           <Head />
         </div>
-        <div className="table__body filter-tabs__content">
-          {data?.campaigns.map((compaing) => (
-            <RowItem key={compaing.id} {...compaing} />
-          ))}
-        </div>
+        <div className="table__body filter-tabs__content">{tableContent}</div>
       </div>
     </div>
   );
