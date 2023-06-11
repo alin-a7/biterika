@@ -7,6 +7,10 @@ export const appApi = createApi({
   reducerPath: "appApi",
   baseQuery: fetchBaseQuery({
     baseUrl: "https://test-api.biterika.team/v1/",
+    prepareHeaders: (headers) => {
+      headers.set("Content-Type", "application/json");
+      return headers;
+    },
   }),
   extractRehydrationInfo(action, { reducerPath }) {
     if (action.type === HYDRATE) {

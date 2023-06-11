@@ -26,6 +26,7 @@ const Filter = () => {
       <ul className="filter-tabs__header flex-auto js-tabs-buttons mb-15 mb-md-2 mb-lg-25">
         {Tabs.map(({ label, dataTab }) => (
           <li
+            key={label}
             data-tab={dataTab}
             className={`filter-tabs__btn-circle ${
               activeTab === dataTab && "active"
